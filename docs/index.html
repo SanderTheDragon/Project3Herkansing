@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bankst</title>
+		
+		<meta charset="utf-8" /> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<link rel="stylesheet" href="css/main.css"></link>
+		<link rel="stylesheet" href="css/font.css"></link>
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/inliner.js"></script>
+	</head>
+	<body>
+		<script>
+			function checkSize() {
+				if ($(window).width() >= 1080) {
+					$("ul.navigation").show();
+					
+					$("ul.navigation").removeClass("mobile");
+				} else {
+					$("ul.navigation").hide();
+					
+					$("ul.navigation").addClass("mobile");
+				}
+			}
+			
+			$(document).ready(function() {
+				inline();
+				checkSize();
+				
+				$(window).on("resize", function() {
+					checkSize();
+				});
+				
+				$("div.menu").on("click", function() {
+					if (!$("ul.navigation").is(":visible")) {
+						$("ul.navigation").show("slide", { "direction": "right" });
+					} else {
+						$("ul.navigation").hide("slide", { "direction": "right" });
+					}
+				});
+				
+				$("ul.navigation > li").on("click", function() {
+					$("html, body").animate({
+						scrollTop: $("div#" + $(this).attr("id")).offset().top - 45
+					});
+				});
+				
+				$(":not(div[class=\"menu\"])").on("click", function(e) {
+					if ($("ul.navigation").is(":visible:not(:animated)") && $("ul.navigation.mobile").length > 0) {
+						$("ul.navigation").hide("slide", { "direction": "right" });
+					}
+				});
+				
+				$("div.nav > span").on("click", function() {
+					if ($(this).attr("id") != $("table:visible").attr("id")) {
+						$("span.selected").removeClass("selected");
+						$(this).addClass("selected");
+						
+						target = $(this)
+						
+						$("table:visible").hide("fade", function() {
+							$("table#" + target.attr("id")).show("fade");
+						});
+					}
+				});
+				
+				$("div.item").on("click", function() {
+					location.href = $(this).attr("href");
+				});
+			});
+		</script>
+		
+		<div class="header">
+			<span class="title">Bankst</span>
+			
+			<ul class="navigation">
+				<li id="files"><img class="svg" src="static/images/files.svg" />Documenten</li>
+				<li id="design"><img class="svg" src="static/images/design.svg" />Ontwerpen</li>
+				<li id="video"><img class="svg" src="static/images/video.svg" />Video's</li>
+				<li id="code"><img class="svg" src="static/images/code.svg" />Code</li>
+			</ul>
+			
+			<div class="menu">
+				<img class="svg" src="static/images/menu.svg" />
+			</div>
+		</div>
+		
+		<div class="content">
+			<div id="start">
+				<span>Bankst</span>
+				<span>Banker dan de bankste bank</span>
+			</div>
+			
+			<div class="files" id="files">
+				<span>Documenten</span>
+				
+				<div class="items">
+					
+				</div>
+			</div>
+			
+			<div class="files alt" id="design">
+				<span>Ontwerpen</span>
+				
+				<div class="items">
+					
+				</div>
+			</div>
+			
+			<div class="files" id="video">
+				<span>Video's</span>
+				
+				<div class="items">
+					
+				</div>
+			</div>
+			
+			<div class="files alt" id="code">
+				<span>Code</span>
+				
+				<div class="items">
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<span>© 2018 Sander Wolswijk</span>
+		</div>
+	</body>
+</html>

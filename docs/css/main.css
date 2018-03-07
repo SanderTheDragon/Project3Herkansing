@@ -1,0 +1,352 @@
+* {
+	font-family: "Open Sans";
+	
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+
+
+div.header {
+	display: flex;
+	align-items: center;
+	
+	position: fixed;
+	top: 0;
+	width: 100%;
+	
+	background-color: rgb(0, 0, 0);
+}
+
+div.header > * {
+	float: left;
+	
+	color: rgb(255, 255, 255);
+}
+
+div.header:after {
+	clear: both;
+}
+
+div.header > span.title {
+	font-size: 2em;
+	font-weight: 500;
+	
+	padding-left: 8px;
+}
+
+div.header > ul.navigation {
+	float: right;
+	
+	position: relative;
+	width: 60%;
+	
+	margin: 0;
+	margin-left: auto;
+	
+	padding: 0;
+	padding-right: 8px;
+	
+	list-style-type: none;
+}
+
+div.header > ul.navigation.mobile {
+	position: absolute;
+	top: 45px;
+	right: 0;
+	width: auto;
+	
+	margin: 0;
+	
+	padding: 8px;
+	
+	z-index: 1;
+	
+	background-color: rgb(0, 0, 0);
+}
+
+div.header > ul.navigation > li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	width: 25%;
+	
+	min-width: 120px;
+	
+	cursor: pointer;
+}
+
+div.header > ul.navigation.mobile > li {
+	width: 100%;
+}
+
+div.header > ul.navigation > li > svg {
+	width: 32px;
+	height: 32px;
+	
+	min-width: 24px;
+	min-height: 24px;
+	
+	margin-right: 2px;
+}
+
+div.header > ul.navigation > li > svg > path:not([fill=none]) {
+	fill: rgb(255, 255, 255);
+}
+
+div.header > ul.navigation > li:hover {
+	color: rgb(0, 0, 0);
+	
+	background-color: rgb(255, 255, 255);
+}
+
+div.header > ul.navigation > li:hover > svg > path:not([fill=none]) {
+	fill: rgb(0, 0, 0);
+}
+
+div.header > div.menu {
+	float: right;
+	
+	margin-left: auto;
+	margin-right: 8px;
+}
+
+div.header > div.menu > svg {
+	width: 32px;
+	height: 32px;
+	
+	min-width: 24px;
+	min-height: 24px;
+}
+
+div.header > div.menu > svg > path:not([fill=none]) {
+	fill: rgb(255, 255, 255);
+}
+
+div.header > div.menu:hover {
+	color: rgb(0, 0, 0);
+	
+	background-color: rgb(255, 255, 255);
+}
+
+div.header > div.menu:hover > svg > path:not([fill=none]) {
+	fill: rgb(0, 0, 0);
+}
+
+
+
+div.content {
+	width: 100%;
+	
+	margin-top: 45px;
+}
+
+div.content > div {
+	width: 100%;
+}
+
+div.content > div#start {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	max-height: 50%;
+	height: 500px;
+	
+	border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+div.content > div#start > span {
+	font-size: 3em;
+	
+	background-color: rgba(0, 0, 0, 0);
+}
+
+div.content > div#start > span:last-child {
+	font-size: 1em;
+	font-weight: 200;
+}
+
+
+div.content > div#home {
+	display: flex;
+	justify-content: space-around;
+	
+	width: 100%;
+	
+	padding: 5% 0;
+}
+
+div.content > div#home > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	float: left;
+	
+	width: 30%;
+}
+
+div.content > div#home > div > span:first-child {
+	font-size: 1.5em;
+}
+
+
+div.content > div.files {
+	width: 100%;
+	
+	background-color: rgb(0, 0, 0);
+	
+	padding: 8px 0;
+}
+
+div.content > div.files.alt {
+	background-color: rgb(255, 255, 255);
+}
+
+div.content > div.files > span {
+	display: flex;
+	justify-content: center;
+	
+	width: 100%;
+	
+	padding: 4px 0;
+	
+	color: rgb(255, 255, 255);
+	
+	font-size: 2em;
+	font-weight: 600;
+}
+
+div.content > div.files.alt > span {
+	color: rgb(0, 0, 0);
+}
+
+div.content > div.files > div.items {
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	
+	width: 100%;
+	
+	padding: 0 5%;
+}
+
+div.item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+	min-width: 300px;
+	height: 150px;
+	
+	margin: 8px 5px;
+	
+	background-color: rgb(255, 255, 255);
+	
+	cursor: pointer;
+}
+
+div.item:hover, div.item.alt {
+	background-color: rgb(0, 0, 0);
+}
+
+div.item.alt:hover {
+	background-color: rgb(255, 255, 255);
+}
+
+div.item > svg {
+	width: 64px;
+	height: 64px;
+}
+
+div.item:hover > svg, div.item.alt > svg {
+	fill: rgb(255, 255, 255);
+}
+
+div.item.alt:hover > svg {
+	fill: rgb(0, 0, 0);
+}
+
+div.item > span {
+	font-size: 1.5em;
+}
+
+div.item:hover > span, div.item.alt > span {
+	color: rgb(255, 255, 255);
+}
+
+div.item.alt:hover > span {
+	color: rgb(0, 0, 0);
+}
+
+
+
+div.footer {
+	display: flex;
+	justify-content: center;
+	
+	width: 100%;
+	
+	color: rgb(255, 255, 255);
+	
+	background-color: rgb(0, 0, 0);
+}
+
+
+
+@media only screen and (max-width: 1079px) {
+	div.header > ul.navigation {
+		display: none;
+	}
+	
+	div.header > div.menu {
+		display: block;
+	}
+	
+	div.header > ul.navigation > li {
+		float: none;
+	}
+	
+	div.content > div#home {
+		flex-direction: column;
+		
+		padding: 5%;
+	}
+	
+	div.content > div#home > div {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1080px) {
+	div.header > ul.navigation {
+		display: block;
+	}
+	
+	div.header > div.menu {
+		display: none;
+	}
+	
+	div.header > ul.navigation > li {
+		float: left;
+	}
+	
+	div.content > div#home {
+		flex-direction: row;
+		
+		padding: 5% 0;
+	}
+	
+	div.content > div#home > div {
+		width: 30%;
+	}
+}
